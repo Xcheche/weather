@@ -40,15 +40,16 @@
               </ul>
             </li>
           </ul>
-          <form class="d-flex">
+          <form action="{% url 'home' %}"  class="d-flex" method="post">
+            {% csrf_token %}
             <input
               class="form-control me-2"
               type="search"
-              placeholder="Search"
-              aria-label="Search"
+              placeholder="Enter Zipcode"
+              aria-label="Search" name="zipcode"
             />
             <button class="btn btn-outline-secondary" type="submit">
-              Search
+              Lookup
             </button>
           </form>
         </div>
